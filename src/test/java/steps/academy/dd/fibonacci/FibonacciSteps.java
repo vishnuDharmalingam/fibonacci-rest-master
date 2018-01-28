@@ -1,17 +1,10 @@
 package steps.academy.dd.fibonacci;
-
-
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
-import java.util.List;
-
 import static io.restassured.RestAssured.*;
-
 import static org.hamcrest.Matchers.*;
 
 
@@ -52,13 +45,11 @@ public class FibonacciSteps {
         response = get("/fib/range?startIndex="+startIndex+"&finishIndex="+finalIndex+"");
     }
 
-
     @Then("^the user should be displayed with the appropriate range of fibonacci values$")
     public void the_user_should_be_displayed_with_the_appropriate_of_fibonacci_values(DataTable table) throws Exception {
         for (int i = 0; i < table.raw().size(); i++) {
             response.then()
                     .body("$", hasItems(table.raw().get(i).get(0)));
         }
-
     }
 }
