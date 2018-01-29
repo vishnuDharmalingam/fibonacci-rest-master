@@ -12,8 +12,9 @@ Feature: To test the fibonacci sequence
       |   5   |  5          |
       |   0   |  0          |
       |  25   |75025        |
-      |  29   |514229       |   //failure test due to error in applicatiopn
-      |  50   |12586269025  |   //failure test due to error in applicatiopn
+      |  29   |514229       |   //failure test due to error in application
+      |  50   |12586269025  |   //failure test due to error in application
+      |  -3   |  2          |
 
   Scenario Outline: To Test range the fibonacci values
    Given the user set the <startIndex> and <finishIndex> as a range for fibonacci
@@ -25,7 +26,7 @@ Feature: To test the fibonacci sequence
    Examples:
    |startIndex|finishIndex |range |range1   |range2    |range3   |
    |15         | 25        | 610  | 4181    |17711     |46368    |
-   |25         | 30        |75025 |121393   |196418    |514229   |     //ffailure test due to error in applicatiopn
+   |25         | 30        |75025 |121393   |196418    |514229   |     //failure test due to error in application
 
 
 
